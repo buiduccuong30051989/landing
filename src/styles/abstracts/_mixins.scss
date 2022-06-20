@@ -1,3 +1,84 @@
 // ======================================================
 // Abstracts :: Mixins
 // ======================================================
+
+@mixin center($width, $height: 0) {
+  position: absolute;
+  @if $height != 0 {
+    left: calc(50% - (#{$width} * 0.5));
+    top: calc(50% - (#{$height} * 0.5));
+  } @else {
+    left: calc(50% - (#{$width} * 0.5));
+    top: calc(50% - (#{$width} * 0.5));
+  }
+}
+
+@mixin until($device) {
+  @media screen and (max-width: $device - 1px) {
+    @content;
+  }
+}
+@mixin between($from, $until) {
+  @media screen and (min-width: $from) and (max-width: $until - 1px) {
+    @content;
+  }
+}
+
+@mixin breakpoint($name) {
+  $breakpoint: map-get($breakpoints, $name);
+  @if $breakpoint {
+    $from: map-get($breakpoint, 'from');
+    $until: map-get($breakpoint, 'until');
+    @if $from and $until {
+      @include between($from, $until) {
+        @content;
+      }
+    } @else if $from {
+      @include from($from) {
+        @content;
+      }
+    } @else if $until {
+      @include until($until) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin ltr-property($property, $spacing, $right: true) {
+  $normal: if($right, 'right', 'left');
+  $opposite: if($right, 'left', 'right');
+  @if $rtl {
+    #{$property}-#{$opposite}: $spacing;
+  } @else {
+    #{$property}-#{$normal}: $spacing;
+  }
+}
+@mixin ltr-position($spacing, $right: true) {
+  $normal: if($right, 'right', 'left');
+  $opposite: if($right, 'left', 'right');
+  @if $rtl {
+    #{$opposite}: $spacing;
+  } @else {
+    #{$normal}: $spacing;
+  }
+}
+
+// Placeholders
+
+%unselectable {
+  user-select: none;
+}
+
+%loader {
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid $grey-lighter;
+  border-radius: $radius-rounded;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: '';
+  display: block;
+  height: 1em;
+  position: relative;
+  width: 1em;
+}

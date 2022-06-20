@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@function rgb($args...) {
+  @return r#{g}#{b}(#{$args})
+}
+/* // 1. Vendor */
+/* // ------------ */
+@import 'vendor/all';
+
+/* // 1. Abstracts */
+/* // ------------ */
+@import 'abstracts/all';
+
+/* // 2. Base */
+/* // ------- */
+@import 'base/all';
+
+/* // 3. Components */
+/* // ------------- */
+@import 'components/all';
+
+/* // 4. Modules */
+/* // ------------- */
+@import 'modules/all';
+
+/* // 5. Pages */
+/* // ------------- */
+@import 'pages/all';

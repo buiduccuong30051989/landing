@@ -22,7 +22,7 @@
     "lint:styles --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix  --allow-empty-input",
     "lint:scripts": "eslint --color ./src/blocks",
     "lint:scripts --fix": "eslint --fix --color ./src/blocks",
-    "etc": "tailwindcss-export-config --config=tailwind.config.js --destination=src/styles/abstracts/_tailwind-variables --format=scss --quoted-keys=true"
+    "etcs": "tailwindcss-export-config --config=tailwind.config.js --destination=styles/abstracts/_tailwind-variables --format=scss --flat=true --quoted-keys=true --preserveKeys=screens,spacing,colors"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -66,13 +66,13 @@
     "autoprefixer": "^9",
     "gulp-cached": "^1.1.1",
     "gulp-dependents": "^1.2.5",
-    "gulp-postcss": "^9.0.0",
-    "postcss": "^7",
+    "gulp-postcss": "^9.0.1",
+    "postcss": "^8.4.14",
     "smart-grid": "^2.1.2",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.19.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "tailwindcss": "^3.1.3",
     "tailwindcss-export-config": "^2.3.0"
   },
   "husky": {

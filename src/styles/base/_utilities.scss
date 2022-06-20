@@ -1,0 +1,27 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn ease 0.3s;
+}
+
+.customized-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.customized-scrollbar::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: 'transparent';
+}
+
+.customized-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  @apply bg-slate-200;
+}
