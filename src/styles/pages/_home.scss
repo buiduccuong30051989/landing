@@ -57,3 +57,17 @@
       }
     }
 }
+
+.s-cta  {
+  @apply relative;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  img {
+    @apply absolute bottom-0;
+    right: 50px;
+    width: 465px;
+  }
+}

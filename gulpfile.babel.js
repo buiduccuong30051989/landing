@@ -7,15 +7,21 @@ const requireDir = require('require-dir'),
     views: {
       src: ['./src/views/*.pug', './src/views/pages/*.pug'],
       dist: './dist/',
-      watch: ['./src/blocks/**/*.pug', './src/views/**/*.pug'],
+      watch: [
+        './src/blocks/**/*.pug',
+        './src/views/**/*.pug',
+        './src/views/*.pug',
+      ],
     },
     styles: {
       src: [
+        './src/styles/*.{scss,sass,css}',
         './src/styles/**/*.{scss,sass,css}',
-        './src/blocks/**/**/*.{scss,sass}',
+        './src/blocks/**/**/*.{scss,sass,css}',
       ],
       dist: './dist/styles/',
       watch: [
+        './src/styles/*.{scss,sass,css}',
         './src/blocks/**/**/*.{scss,sass,css}',
         './src/styles/**/*.{scss,sass,css}',
       ],
@@ -50,27 +56,13 @@ export { paths };
 
 export const development = gulp.series(
   'clean',
-  gulp.parallel([
-    'views',
-    'styles',
-    'scripts',
-    'images',
-    'fonts',
-    'favicons',
-  ]),
+  gulp.parallel(['views', 'styles', 'scripts', 'images', 'fonts', 'favicons']),
   gulp.parallel('serve')
 );
 
 export const prod = gulp.series(
   'clean',
-  gulp.parallel([
-    'views',
-    'styles',
-    'scripts',
-    'images',
-    'fonts',
-    'favicons',
-  ])
+  gulp.parallel(['views', 'styles', 'scripts', 'images', 'fonts', 'favicons'])
 );
 
 export default development;

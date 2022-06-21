@@ -23,10 +23,10 @@ const argv = yargs.argv,
 gulp.task('styles', () => {
   return gulp
     .src(paths.styles.src)
-    .pipe(cached('sass')) // 1
-    .pipe(dependents())
+    // .pipe(cached('sass')) // 1
+    // .pipe(dependents())
     .pipe(gulpif(!production, sourcemaps.init()))
-    .pipe(plumber())
+    // .pipe(plumber())
     .pipe(
       sass({
         includePaths: ['./node_modules'],
