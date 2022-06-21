@@ -1,10 +1,11 @@
 const colors = require('tailwindcss/colors');
 module.exports = {
-  darkMode: 'class',
   important: '#app',
+  darkMode: 'class',
   content: ['./src/**/*.pug', './src/**/**/*.pug'],
-  // mode: 'jit',
+  mode: 'jit',
   safelist: [
+    'dark',
     {
       pattern: /./,
     },

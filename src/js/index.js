@@ -2,7 +2,7 @@ import './import/modules';
 import './import/components';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('html');
+  const root = document.querySelector('.js-theme-provider');
   if ('themePreference' in localStorage) {
     const mode = localStorage.themePreference;
     root.classList.add(mode);

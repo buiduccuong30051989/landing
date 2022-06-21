@@ -22,7 +22,7 @@
     "lint:styles --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix  --allow-empty-input",
     "lint:scripts": "eslint --color ./src/blocks",
     "lint:scripts --fix": "eslint --fix --color ./src/blocks",
-    "etcs": "tailwindcss-export-config --config=tailwind.config.js --destination=styles/abstracts/_tailwind-variables --format=scss --flat=true --quoted-keys=true --preserveKeys=screens,spacing,colors"
+    "etcs": "tailwindcss-export-config --config=tailwind.config.js --destination=src/styles/abstracts/_tailwind-variables --format=scss --flat=true --quoted-keys=true --preserveKeys=screens,spacing,colors"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
