@@ -1,4 +1,6 @@
 block variables
+include ../../blocks/modules/header/header
+include ../../blocks/modules/footer/footer
 
 doctype html
 html(lang="en")
@@ -28,5 +30,7 @@ html(lang="en")
     link(rel="stylesheet" href="styles/main.css")
   body#app
     .js-theme-provider
+      +header
       block content
+      +footer
       block scripts

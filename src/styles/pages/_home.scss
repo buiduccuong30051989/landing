@@ -1,0 +1,25 @@
+.s-feature-01 {
+  width: 100%;
+  height: 582px;
+  background-size: cover;
+  background-position: 50%;
+  background-image: -webkit-image-set(url(https://cdna.iconscout.com/img/pattern-mockup.3b2e21f.png) 1x,url(https://cdna.iconscout.com/img/pattern-mockup@2x.a82c484.png) 2x);
+}
+
+.hightlight {
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140%;
+    height: 125%;
+    background-image: url(https://cdna.iconscout.com/img/vector-blue.a865cec.svg);
+    background-repeat: no-repeat;
+    z-index: -1;
+    background-position: center;
+    background-size: contain;
+  }
+}

@@ -1,0 +1,33 @@
+.card-theme {
+  @apply shadow-xl overflow-hidden rounded-xl bg-white/50;
+
+  &-cover {
+    @apply relative overflow-hidden;
+    max-height: 160px;
+
+    img {
+      @apply object-cover object-center w-full h-full;
+    }
+  }
+
+  .cover-control-bottom {
+    @apply absolute bottom-0 w-full left-0;
+    @apply flex items-center justify-end px-4 py-2;
+  }
+
+  &-content {
+    @apply p-4;
+
+    h3 {
+      @apply overflow-hidden truncate mb-1;
+
+      a {
+        @apply font-normal text-base;
+      }
+    }
+  }
+
+  &-footer {
+    @apply flex items-end w-full;
+  }
+}
